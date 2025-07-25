@@ -10,13 +10,32 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var friends: [Friend] = [
-        Friend(name: "Duke Ursino", birthday: Date(timeIntervalSince1970: 30)),
-        Friend(name: "Viola", birthday: Date(timeIntervalSince1970: 27))
+        
+        Friend(name: "Viola", birthday: Date(timeIntervalSince1970: 20)),
+        Friend(name: "Olivia", birthday: Date(timeIntervalSince1970: 27))
+        
     ]//array
     
     var body: some View {
         
-        
+        NavigationStack {
+            
+            List(friends, id: \.name) { friend in
+                
+                HStack {
+                    
+                    Text(friend.name)
+                    
+                    Spacer()
+                    
+                    Text(friend.birthday, format: .dateTime.month(.wide).day().year())
+                    
+                }//hstack
+                
+            }//list
+            .navigationTitle("Birthdays")
+            
+        }//navigationstack
         
     }//body
     
