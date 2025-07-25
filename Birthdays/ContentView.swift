@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var friends: [Friend] = [
+        Friend(name: "Duke Ursino", birthday: Date(timeIntervalSince1970: 30)),
+        Friend(name: "Viola", birthday: Date(timeIntervalSince1970: 27))
+    ]//array
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        
+        
+        
+    }//body
+    
+}//struct
+
 
 #Preview {
     ContentView()
